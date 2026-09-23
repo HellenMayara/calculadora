@@ -1,0 +1,109 @@
+* {
+    margin: 0; /* remove a margem padrão de todos os elementos */
+    padding: 0; /* remove o espaçamento interno padrão de todos os elementos */
+    box-sizing: border-box; /* define o box-sizing como border-box, para que o padding e a borda sejam incluídos na largura e altura dos elementos */
+}
+html {
+    scrollbar-gutter: stable; /* define o scrollbar-gutter como stable, para que a barra de rolagem não apareça e desapareça quando o conteúdo da página for maior que a altura da tela */
+    overflow-x: hidden; /* define o overflow-x como hidden, para que a barra de rolagem horizontal não apareça */
+}
+
+body {
+    min-height: 100vh; /* definiu a altura mínima da pagina como 100% da tela */
+    background-color: #f9f9fc; /* deixou a cor de fundo da pagina toda preta */
+    font-family: Arial, Helvetica, sans-serif; /* definiu a fonte do texto */
+    padding: 20px; /* definiu o espaçamento interno da pagina */
+}
+
+.calculadora {
+    width: 280%; /* definiu a largura da calculadora */
+    max-width: 320px; /* definiu a largura máxima da calculadora */
+    background-color: #f80606; /* definiu a cor de fundo da calculadora */
+    border-radius: 20px; /* definiu o arredondamento dos cantos da calculadora */
+    padding: 20px; /* definiu o espaçamento interno da calculadora */
+    min-width: 0; /* definiu a largura mínima da calculadora */
+    margin: 0 auto; /* definiu a margem da calculadora como automática, para que ela fique centralizada na tela */
+}
+
+.visor {
+    background-color: #f7f7fa; /* definiu a cor de fundo do visor, onde aparece o resultado */
+    border-radius: 12px; /* definiu o arredondamento dos cantos do visor */
+    padding: 20px 16px; /* definiu o espaçamento interno do visor */
+    margin-bottom: 16px; /* definiu o espaçamento entre o visor e os botões */
+    text-align: right; /* o numero do visor que estava do lado esquerdo foi para o direito */
+    min-height: 100px; /* definiu o tamanho mínimo do visor */
+    display: flex; /* definiu o visor como flexbox */
+    flex-direction: column; /* definiu a direção do flexbox como coluna */
+    justify-content: flex-end; /* definiu o alinhamento do flexbox como final, o numero ficou na parte inferior do visor */
+    overflow: hidden; /* definiu o overflow do visor como hidden, para que o numero não ultrapasse o visor */
+    min-width: 0; /* definiu a largura mínima da calculadora */
+}
+
+.operacao {
+    color: #f806f8; /* definiu a cor da operação que aparece no visor */
+    font-size: 16px; /* definiu o tamanho da fonte da operação que aparece no visor */
+    min-height: 20px; /* definiu o tamanho mínimo da operação que aparece no visor */
+}
+
+.resultado {
+    color:#0e0d0d; /* definiu a cor do numero que aparece no visor */
+    font-size: 40px; /* definiu o tamanho da fonte do numero que aparece no visor */
+    font-weight: bold; /* definiu o peso da fonte do numero que aparece no visor, o numero ficou em negrito */
+    overflow: hidden; /* definiu o overflow do numero que aparece no visor como hidden, para que o numero não ultrapasse o visor */
+    text-overflow: ellipsis; /* definiu o overflow do numero que aparece no visor como ellipsis, para que o numero não ultrapasse o visor e apareça "..." */
+    white-space: nowrap; /* definiu o overflow do numero que aparece no visor como nowrap, para que o numero não ultrapasse o visor e apareça "..." */
+    min-width: 0; /* definiu a largura mínima da calculadora */
+}
+
+.teclado {
+    display: grid; /* definiu o teclado como grid, virou uma coluna */
+    grid-template-columns: repeat(4,1fr); /* definiu o teclado como grid, viraram quatro colunas */
+    gap: 10px; /* definiu o espaçamento entre os botões do teclado */
+}
+
+.tecla {
+    height: 60px; /* definiu a altura dos botões do teclado */
+    width: 100%; /* definiu a largura dos botões do teclado */
+    border: none; /* definiu a borda dos botões do teclado como nenhuma */
+    border-radius: 12px; /* definiu o arredondamento dos cantos dos botões do teclado */
+    background-color: #eeeef3; /* definiu a cor de fundo dos botões do teclado */
+    color: #070707; /* definiu a cor do texto dos botões do teclado */
+    font-size: 20px; /* definiu o tamanho da fonte do texto dos botões do teclado */
+    cursor: pointer; /* definiu o cursor do mouse como uma mãozinha quando passa por cima dos botões do teclado */
+    transition: background-color 0.2s; /* definiu a transição da cor de fundo dos botões do teclado */
+}
+
+.tecla:hover {
+    background-color: #73737a /* quando passa o mouse no botao a cor do mesmo é alterada */
+}
+
+.tecla:active {
+    transform: scale(0.95); /* quando clica no botao o mesmo diminui de tamanho */
+}
+
+.acao {
+    background-color: #0d0d0e; /* definiu a cor de fundo dos botões de ação */
+    color: #f2f2f7; /* definiu a cor do texto dos botões de ação */
+}
+
+.operador {
+    background-color: #7f77dd; /* definiu a cor de fundo dos botões de operador */
+    color: #f2f2f7; /* definiu a cor do texto dos botões de operador */
+}
+
+.operador:hover {
+    background-color: #0c0c0c; /* quando passa o mouse no botao a cor do mesmo é alterada */
+}
+
+.igual {
+    background-color: #066b02; /* definiu a cor de fundo do botão de igual */
+    color: #f2f2f7; /* definiu a cor do texto do botão de igual */
+}
+
+.igual:hover {
+    background-color: #080808; /* quando passa o mouse no botao a cor do mesmo é alterada */
+}
+
+.zero {
+    grid-column: span 2; /* definiu que o botão zero ocupa duas colunas */
+}

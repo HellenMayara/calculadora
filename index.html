@@ -1,0 +1,48 @@
+<DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="calculadora">
+
+        <div class="visor">
+            <span class="operacao" id="operacao"></span>
+            <span class="resultado" id="resultado">0</span>
+        </div>
+
+        <div class="teclado">
+            <button class="tecla acao" data-acao="limpar">C</button>
+            <button class="tecla acao" data-acao="apagar">←</button>
+            <button class="tecla acao" data-acao="porcentagem">%</button>
+            <button class="tecla operador" data-operador="/">÷</button>
+
+            <button class="tecla" data-numero="7">7</button>
+            <button class="tecla" data-numero="8">8</button>
+            <button class="tecla" data-numero="9">9</button>
+            <button class="tecla operador" data-operador="*">×</button>
+
+            <button class="tecla" data-numero="4">4</button>
+            <button class="tecla" data-numero="5">5</button>
+            <button class="tecla" data-numero="6">6</button>
+            <button class="tecla operador" data-operador="-">−</button>
+
+            <button class="tecla" data-numero="1">1</button>
+            <button class="tecla" data-numero="2">2</button>
+            <button class="tecla" data-numero="3">3</button>
+            <button class="tecla operador" data-operador="+">+</button>
+
+            <button class="tecla zero" data-numero="0">0</button>
+            <button class="tecla" data-numero=",">,</button>
+            <button class="tecla igual" data-acao="igual">=</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</DOCTYPE>
