@@ -152,3 +152,34 @@ function porcentagem() {
     acabouDeCalcular = false; // seta a flag acabouDeCalcular para false
     atualizarVisor(); // atualiza o visor da calculadora
 }
+
+document.addEventListener("keydown", function (evento) { // adiciona um evento de teclado para a página
+    const tecla = evento.key; // obtém a tecla pressionada
+    const botao = document.querySelector (
+        `[data-numero="${tecla}"], [data-operador="${tecla}"]`
+    );
+
+    if (botao) { // verifica se existe um botão correspondente à tecla pressionada
+        botao.classList.add("pressionada"); // adiciona a classe "pressionada" ao botão correspondente
+        setTimeout(function () { // adiciona um timeout para remover a classe "pressionada" após 100ms
+            botao.classList.remove("pressionada"); // remove a classe "pressionada" do botão correspondente
+            }, 100);
+    }
+
+    
+    if (tecla >= "0" && tecla <= "9") { // verifica se a tecla pressionada é um número
+        digitarNumero(tecla); // chama a função digitarNumero passando o número digitado
+    } else if (tecla === "," || tecla === ".") { // verifica se a tecla pressionada é uma vírgula ou ponto
+        digitarNumero(","); // chama a função digitarNumero passando a vírgula
+    } else if (tecla === "+" || tecla === "-" || tecla === "*" || tecla === "/") { // verifica se a tecla pressionada é um operador
+        escolherOperador(tecla); // chama a função escolherOperador passando o operador digitado
+    } else if (tecla === "Enter" || tecla === "=") { // verifica se a tecla pressionada é Enter ou igual
+        calcular(); // chama a função calcular
+    } else if (tecla === "Backspace") { // verifica se a tecla pressionada é Backspace
+        apagar(); // chama a função apagar
+    } else if (tecla === "Escape" || tecla === "c" || tecla === "C") { // verifica se a tecla pressionada é Escape ou C
+        limpar(); // chama a função limpar
+    } else if (tecla === "%") { // verifica se a tecla pressionada é %
+        porcentagem(); // chama a função porcentagem
+    }
+});

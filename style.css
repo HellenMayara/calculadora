@@ -107,3 +107,7 @@ body {
 .zero {
     grid-column: span 2; /* definiu que o botão zero ocupa duas colunas */
 }
+
+.tecla.pressionada {
+    background-color: #faf629
+}
