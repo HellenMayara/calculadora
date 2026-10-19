@@ -38,26 +38,26 @@ Não é necessário instalar nada.
 
 ## Desafios enfrentados
 
-**O número vazando do visor**
+**O número vazando do visor** -> 
 Sempre que eu digitava um número muito grande, ele vazava do visor da calculadora. Coloquei um limite de 12 dígitos no JavaScript e usei `overflow: hidden` com `text-overflow: ellipsis` no CSS,
 para o que passasse do espaço aparecer com reticências.
 
-**A calculadora escorregava**
+**A calculadora escorregava** -> 
 A cada clique nas teclas da calculadora ela escorregava para o lado esquerdo da tela. Esse foi o que mais me deu trabalho, porque eu estava procurando no lugar errado, primeiro achei que era por causa dos números vazando
 do visor e tentei resolver com `overflow: hidden`, não deu certo. Tentei `min-width: 0` nos elementos e também não mudou nada. Só resolveu quando parei de centralizar com Flexbox no body e passei a usar `margin: 0 auto`.
 Perdi a centralização vertical nessa troca, mas pelo menos a calculadora parou de escorregar.
 
-**Sem reset no visor**
+**Sem reset no visor** -> 
 O visor não resetava após os resultados dos cálculos. Se eu fizesse 5 + 3 = e depois do resultado que era 8 digitasse 7, aparecia no visor 87, porque o código não sabia diferenciar um resultado de um número que eu tinha digitado.
 Criei uma variável `acabouDeCalcular` para guardar essa informação, e agora o visor limpa antes de receber o novo número. 
 
-**A fonte no visor não diminuia**
+**A fonte no visor não diminuia** -> 
 Depois de limitar a quantidade de dígitos, quis que o número fosse ficando menor conforme o visor enchesse, em vez de só cortar.
 Usei `clamp` no CSS e achei que tinha resolvido, mas ao testar o número continuava do mesmo tamanho. Percebi que o `clamp` ajusta a fonte conforme a largura da tela, e a minha janela não muda de tamanho enquanto eu digito.
 Quem sabia quantos dígitos tinham era o JavaScript, então passei o controle pra lá.
 Agora a função que atualiza no visor conta os caracteres e define o tamanho da fonte em faixas.
 
-**Separar o milhar**
+**Separar o milhar** -> 
 Quis que números de valores altos ficassem mais fáceis de ler, com 2000 aparecendo como 2.000. 
 Pensei em colocar o ponto direto na variável, mas percebi que isso quebraria o cálculo, porque o `parseFloat` não entende o ponto de milhar do jeito que a gente usa. 
 Então criei uma função que só formata na hora de mostrar na tela, a variável continua guardando 2000 sem o ponto, e o visor exibe 2.000.
