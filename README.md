@@ -7,7 +7,7 @@ Calculadora web feita com HTML, CSS e JavaScript, sem bibliotecas.
 Foi meu primeiro projeto depois de decidir mudar de área. Comecei pensando que seria rápido, mas a maior parte do tempo foi gasta em coisas que eu nem imaginava: o número comprido que vazava do visor,
 a calculadora que saía do lugar quando eu clicava, o resultado que não limpava na hora certa. Cada um desses virou uma coisa nova que eu aprendi.
 
-[Acessar a calculadora](https://github.com/HellenMayara/calculadora)
+[Acessar a calculadora](https://hellenmayara.github.io/calculadora/)
 
 ## Funcionalidades
 
